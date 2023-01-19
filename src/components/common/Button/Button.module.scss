@@ -1,0 +1,24 @@
+.root {
+  max-width: 296px;
+  padding: 21px 24px 20px;
+  text-align: center;
+  border-radius: 12px;
+  background-color: var(--orange100);
+  font-weight: 600;
+  color: var(--white100);
+  transition: var(--transitionStyleButton);
+  cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 288px;
+    padding: 16px 24px;
+  }
+  
+  &:hover {
+    background-color: var(--orange80);
+  }
+
+  &:focus {
+    background-color: var(--orange120);
+  }
+}

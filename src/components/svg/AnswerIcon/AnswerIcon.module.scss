@@ -1,0 +1,10 @@
+.root {
+
+  & path {
+    stroke: var(--black40)
+  }
+
+  & path + path {
+    fill: var(--white100)
+  }
+}

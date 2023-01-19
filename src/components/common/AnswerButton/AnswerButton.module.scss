@@ -1,0 +1,83 @@
+.root {
+  max-width: 405px;
+  padding: 24.5px 48px;
+  position: relative;
+  transition: var(--transitionStyleButton);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  & .svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--transitionStyleButton);
+  }
+
+  &:hover {
+    & .svg {
+      path {
+        stroke: var(--orange100);
+      }
+      path + path {
+        stroke: var(--orange100);
+      }
+    }
+  }
+
+  &.selected {
+    & .svg {
+      path {
+        stroke: var(--orange100);
+      }
+      path + path {
+        stroke: var(--orange100);
+        fill: var(--orange5);
+      }
+    }
+  }
+
+  &.correct {
+    & .svg {
+      path {
+        stroke: var(--green100);
+      }
+      path + path {
+        stroke: var(--green100);
+        fill: var(--green5);
+      }
+    }
+  }
+
+  &.wrong {
+    & .svg {
+      path {
+        stroke: var(--red100);
+      }
+      path + path {
+        stroke: var(--red100);
+        fill: var(--red5);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    max-width: 320px;
+    padding: 20px 40px;
+  }
+}
+
+.textBlock {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.figure {
+  color: var(--orange100);
+  font-weight: 600px;
+  margin-right: 8px;
+}

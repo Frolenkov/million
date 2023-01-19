@@ -1,0 +1,38 @@
+.pageWrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--black5);
+}
+
+.main {
+  display: flex;
+  height: 100%;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 124px 80px;
+    height: 100%;
+    flex: 1 0 0;
+}
+
+.question {
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.answers {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 842px;
+  
+}
+
+.answer {
+  flex: 1 0 50%;
+  margin-bottom: 32px;
+}
