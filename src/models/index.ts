@@ -21,6 +21,5 @@ export interface IQuestion {
   id: string;
   question: string;
   answers: IAnswer[];
-  type: string;
   award: number;
 }

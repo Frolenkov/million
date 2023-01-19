@@ -5,6 +5,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 8px;
   padding: 8px 92px;
   overflow: hidden;
@@ -21,9 +22,9 @@
     }
     path {
       stroke: var(--orange100);
-    }
-    path + path {
-      stroke: var(--orange100);
+      & + path {
+        stroke: var(--orange100);
+      }
     }
   }
 

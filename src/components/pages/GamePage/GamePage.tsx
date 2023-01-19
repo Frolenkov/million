@@ -14,19 +14,28 @@ const GamePage: React.FC = () => {
   const { currentLevel, questions } = useAppSelector((state) => state.game);
   const dispatch = useAppDispatch();
   const currentQuestion = questions[currentLevel];
+  const targetAnswers = currentQuestion?.answers?.filter(item => item.isCorrect);
   const navigate = useNavigate();
   const [scoreOpen, setScoreOpen] = useState(false);
+  const [answers, setAnswers] = useState<IAnswer[]>([]);
 
   const selectAnswer = (answer: IAnswer) => {
     if (answer.isCorrect) {
-      if (currentLevel === questions.length - 1) {
-        navigate('/');
+      const newAnswers = [...answers, answer];
+      console.log(newAnswers.length, targetAnswers.length);
+      if (newAnswers.length === targetAnswers.length) {
+        setAnswers([]);
+        if (currentLevel === questions.length - 1) {
+          navigate('/');
+          return;
+        }
+        dispatch(moveToNextLevel());
         return;
-      }
-      dispatch(moveToNextLevel());
+      } else
+      setAnswers(newAnswers);
       return;
     }
-    navigate('/');
+  navigate('/');
   };
 
   return (
@@ -38,15 +47,15 @@ const GamePage: React.FC = () => {
             <div className={css.question}>{currentQuestion?.question}</div>
             <div className={css.answers}>
               {
-              currentQuestion?.answers.map((answer) => (
-                <AnswerButton
-                  key={answer.text}
-                  className={css.answer}
-                  onClick={selectAnswer}
-                  answer={answer}
-                />
-              ))
-            }
+                currentQuestion?.answers.map((answer) => (
+                  <AnswerButton
+                    key={answer.text}
+                    className={css.answer}
+                    onClick={selectAnswer}
+                    answer={answer}
+                  />
+                ))
+              }
             </div>
           </div>
           <Score className={classNames(css.sideBar, { [css.open]: scoreOpen })} />

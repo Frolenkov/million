@@ -25,7 +25,6 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 500
         },
         {
@@ -53,7 +52,6 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 1000
         },
         {
@@ -81,7 +79,6 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 2000
         },
         {
@@ -96,7 +93,7 @@
                 {
                     "figure":"B",
                     "text": "Wilhelm Conrad Roentgen",
-                    "isCorrect": true                    
+                    "isCorrect": false                    
                 },
                 {
                     "figure":"C",
@@ -109,7 +106,6 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 4000
         },
         {
@@ -137,7 +133,6 @@
                     "isCorrect": true                    
                 }
             ],
-            "type": "single",
             "award": 4000
         },
         {
@@ -165,7 +160,6 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 8000
         },
         {
@@ -193,12 +187,11 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 16000
         },
         {
             "id": "45g5",
-            "question": "Slava",
+            "question": "Slava... (select two answers)",
             "answers": [
                 {
                     "figure":"A",
@@ -212,16 +205,15 @@
                 },
                 {
                     "figure":"C",
-                    "text": "Nazii",
+                    "text": "Nation",
                     "isCorrect": true                    
                 },
                 {
                     "figure":"D",
-                    "text": "Satane",
+                    "text": "KPSS",
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 32000
         },
         {
@@ -249,7 +241,6 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 64000
         },
         {
@@ -277,7 +268,6 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 125000
         },
         {
@@ -305,7 +295,6 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 250000
         },
         {
@@ -333,7 +322,6 @@
                     "isCorrect": true                    
                 }
             ],
-            "type": "single",
             "award": 500000
         },
         {
@@ -361,7 +349,6 @@
                     "isCorrect": false                    
                 }
             ],
-            "type": "single",
             "award": 1000000
         }
     ]
