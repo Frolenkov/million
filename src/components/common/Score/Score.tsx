@@ -1,12 +1,19 @@
 import React from 'react';
+import classnames from 'classnames';
 import css from './Score.module.scss';
 import { useAppSelector } from '../../../hooks/redux';
 import ScoreItem from '../ScoreItem/ScoreItem';
 
-const Score: React.FC = () => {
+interface ScoreProps {
+  className: string
+}
+
+const Score: React.FC<ScoreProps> = ({ className }) => {
   const { currentLevel, questions } = useAppSelector((state) => state.game);
+  const classes = classnames(className, css.root);
+
   return (
-    <div className={css.wrapper}>
+    <div className={classes}>
       {questions.map((question, index) => (
         <ScoreItem
           index={index}

@@ -9,9 +9,11 @@
   transition: var(--transitionStyleButton);
   cursor: pointer;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 768px) {
     max-width: 288px;
     padding: 16px 24px;
+    width: 100%;
+    font-size: 14px;
   }
   
   &:hover {

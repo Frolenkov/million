@@ -8,31 +8,62 @@
 .main {
   display: flex;
   height: 100%;
+  position: relative;
+  & .toggler {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+  
 }
 
 .game {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 124px 80px;
-    height: 100%;
-    flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 124px 80px;
+  height: 100%;
+  flex: 1 0 0;
+  @media screen and (max-width: 768px) {
+    padding: 32px 16px;
+    justify-content: flex-end;
+  }
 }
 
 .question {
-    font-weight: 600;
-    font-size: 32px;
-    margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 32px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 96px;
+    text-align: center;
+    font-size: 18px;
+  }
 }
 
 .answers {
   display: flex;
   flex-wrap: wrap;
   max-width: 842px;
-  
 }
 
 .answer {
   flex: 1 0 50%;
   margin-bottom: 32px;
+  @media screen and (max-width: 768px) {
+    flex: 1 0 100%;
+  }
+}
+
+.sideBar {
+  margin-right: -30px;
+  &.open {
+    display: flex;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+  }
 }

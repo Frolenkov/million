@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import classnames from 'classnames';
 import css from './WelcomePage.module.scss';
 import hand from '../../../assets/svg/hand.svg';
 import Button from '../../common/Button/Button';
@@ -36,7 +37,7 @@ const WelcomePage: React.FC = () => {
   );
 
   return (
-    <div className={css.pageWrapper}>
+    <div className={classnames(css.pageWrapper, { [css.finish]: currentLevel > 0 })}>
       <Container>
         <div className={css.banner}>
           <div className={css.imageBlock}>

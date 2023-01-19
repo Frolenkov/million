@@ -7,6 +7,7 @@
   align-items: center;
   margin-bottom: 8px;
   padding: 8px 92px;
+  overflow: hidden;
 
   & .svg {
     width: 100%;
@@ -15,12 +16,15 @@
     top: 0;
     left: 0;
     transition: var(--transitionStyleButton);
+    @media screen and (max-width: 768px) {
+      transform: scaleX(1.3);
+    }
     path {
-        stroke: var(--orange100);
-      }
-      path + path {
-        stroke: var(--orange100);
-      }
+      stroke: var(--orange100);
+    }
+    path + path {
+      stroke: var(--orange100);
+    }
   }
 
   &.prev {
@@ -51,9 +55,12 @@
     }
   }
 
-  @media screen and (max-width: 1024px) {
-    max-width: 320px;
-    padding: 20px 40px;
+  @media screen and (max-width: 768px) {
+    max-width: none;
+    padding: 8px 24px;
+    justify-content: center;
+    max-height: 32px;
+    font-size: 14px;
   }
 }
 

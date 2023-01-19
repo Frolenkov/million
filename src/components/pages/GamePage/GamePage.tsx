@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import classNames from 'classnames';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import AnswerButton from '../../common/AnswerButton/AnswerButton';
 import { IAnswer } from '../../../models';
@@ -7,12 +8,14 @@ import { moveToNextLevel } from '../../../store/reducers/gameSlice';
 import css from './GamePage.module.scss';
 import Container from '../../common/Container/Container';
 import Score from '../../common/Score/Score';
+import BurgerMenu from '../../common/BurgerMenu/BurgerMenu';
 
 const GamePage: React.FC = () => {
   const { currentLevel, questions } = useAppSelector((state) => state.game);
   const dispatch = useAppDispatch();
   const currentQuestion = questions[currentLevel];
   const navigate = useNavigate();
+  const [scoreOpen, setScoreOpen] = useState(false);
 
   const selectAnswer = (answer: IAnswer) => {
     if (answer.isCorrect) {
@@ -30,6 +33,7 @@ const GamePage: React.FC = () => {
     <div className={css.pageWrapper}>
       <Container>
         <div className={css.main}>
+          <BurgerMenu className={css.toggler} onClick={() => setScoreOpen(!scoreOpen)} />
           <div className={css.game}>
             <div className={css.question}>{currentQuestion?.question}</div>
             <div className={css.answers}>
@@ -45,7 +49,7 @@ const GamePage: React.FC = () => {
             }
             </div>
           </div>
-          <Score />
+          <Score className={classNames(css.sideBar, { [css.open]: scoreOpen })} />
         </div>
       </Container>
     </div>
